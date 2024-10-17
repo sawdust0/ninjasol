@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlphaTwelve Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="https://www.alphatwelve.com/images/wlogo.png" alt="Logo" class="logo-image">
+      </div>
+      <nav>
+        <a href="#" class="active"><i class="fas fa-home"></i> <span>Home</span></a>
+        <a href="#"><i class="fas fa-calendar"></i> <span>Events</span></a>
+        <a href="#"><i class="fas fa-users"></i> <span>Speakers</span></a>
+        <a href="#"><i class="fas fa-file-alt"></i> <span>Reports</span></a>
+        <a href="#"><i class="fas fa-bell"></i> <span>Notifications </span></a>
+        <a href="#"><i class="fas fa-comment"></i> <span>Messages</span></a>
+        <a href="#"><i class="fas fa-cog"></i> <span>Settings</span></a>
+        <a href="#" class="sidebar-toggle">
+          <i class="fa-solid fa-chevron-left"></i>
+          <span>Collapse</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="dark-mode-toggle">
+          <input type="checkbox" id="darkModeToggle" class="toggle-checkbox" checked />
+          <label for="darkModeToggle" class="toggle-label">
+            <span class="toggle-inner"></span>
+            <span class="toggle-switch"></span>
+          </label>
+          <span class="toggle-text">Dark mode</span>
+        </div>
+        <div class="user-info">
+          <img src="https://i.pravatar.cc/40" alt="User Avatar" class="avatar" />
+          <div class="user-details">
+            <span class="user-name">Rudra Devi</span>
+            <span class="user-email">rudra.devi@gmail.com</span>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+    <main class="content">
+      <div class="mobile-logo">
+        <img src="https://www.alphatwelve.com/images/wlogo.png" alt="Logo" class="mobile-logo-image">
+      </div>
+      <header>
+        <h1 class="welcome-text">Welcome! here's your summary</h1>
+        <div class="hamburger-menu"><span></span><span></span><span></span></div>
+      </header>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Total Events <i class="fa-solid fa-circle-info"></i></h3>
+          <p class="stat-value">100,000
+            <span class="stat-change positive">+3.40%</span>
+          </p>
+
+        </div>
+        <div class="stat-card">
+          <h3>Active Speakers <i class="fa-solid fa-circle-info"></i></h3>
+          <p class="stat-value">25
+            <span class="stat-change negative">-0.60%</span>
+          </p>
+
+        </div>
+        <div class="stat-card">
+          <h3>Total Registrations <i class="fa-solid fa-circle-info"></i></h3>
+          <p class="stat-value">300
+            <span class="stat-change positive">+3.40%</span>
+          </p>
+
+        </div>
+        <div class="stat-card">
+          <h3>Total Revenue <i class="fa-solid fa-circle-info"></i></h3>
+          <p class="stat-value">$500,000
+            <span class="stat-change positive">+13.40%</span>
+          </p>
+
+        </div>
+      </div>
+
+      <div class="news-chart-flex">
+        <div class="chart-container">
+          <h2 class="chart-title">Event Registrations per month</h2>
+          <canvas id="registrationsChart"></canvas>
+        </div>
+
+        <div class="news-slider">
+          <div class="news-content">
+
+            <div class="news-text-container">
+              <h3>Latest News & Updates</h3>
+              <p class="news-text">
+
+              </p>
+              <div class="slider-indicators"></div>
+            </div>
+          </div>
+          <div class="news-nav">
+            <button class="prev-btn">&lt;</button>
+            <button class="next-btn">&gt;</button>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="events-history">
+        <h2 class="events-history-title">Events History</h2>
+        <div class="events-controls">
+          <div class="event-mobile">
+            <input type="text" placeholder="Search..." class="search-input" />
+            <div class="filter-buttons">
+              <button>Date <i class="fa-solid fa-chevron-down"></i></button>
+              <button>Status <i class="fa-solid fa-chevron-down"></i></button>
+              <button>Name <i class="fa-solid fa-chevron-down"></i></button>
+              <span class="results-count">Displaying 100 results</span>
+            </div>
+          </div>
+          <div class="export-text">
+            <div class="sort-export-text">
+              <p>Sort:</p>
+            </div>
+            <div class="sort-export">
+              <button>Most Recent <i class="fa-solid fa-chevron-down"></i></button>
+              <button class="export-btn">
+                <i class="fa-solid fa-download"></i> Export
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <table class="events-table">
+          <thead class="table-header">
+            <tr>
+              <th>Event Name</th>
+              <th class="hide-mobile">Date</th>
+              <th class="hide-mobile">Speaker</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="event-name">Cloud Innovation Summit</td>
+              <td class="hide-mobile">2024-10-15</td>
+              <td class="hide-mobile">Jane Doe</td>
+              <td><span class="status completed">Completed</span></td>
+            </tr>
+            <tr>
+              <td class="event-name">Blockchain Revolution Conference</td>
+              <td class="hide-mobile">2024-11-05</td>
+              <td class="hide-mobile">Dr. Peter Smith</td>
+              <td><span class="status in-progress">InProgress</span></td>
+            </tr>
+            <tr>
+            <tr>
+              <td class="event-name">Coding Event</td>
+              <td class="hide-mobile">2024-11-05</td>
+              <td class="hide-mobile">Dr. Alon Hon</td>
+              <td><span class="status completed">Completed</span></td>
+            </tr>
+            <tr>
+              <td class="event-name">All in one event</td>
+              <td class="hide-mobile">2024-11-05</td>
+              <td class="hide-mobile">Dr. Peter Smith</td>
+              <td><span class="status completed">Completed</span></td>
+            </tr>
+            </tr>
+            <td class="event-name">Hackathon Event</td>
+            <td class="hide-mobile">2024-11-05</td>
+            <td class="hide-mobile">Dr. Xeon Smith</td>
+            <td><span class="status in-progress">InProgress</span></td>
+            </tr>
+            <tr>
+              <td class="event-name">Newyork University Event</td>
+              <td class="hide-mobile">2024-11-05</td>
+              <td class="hide-mobile">Dr. Rader Smith</td>
+              <td><span class="status completed">Completed</span></td>
+            </tr>
+            </tr>
+            <td class="event-name">Blockchain Revolution Conference</td>
+            <td class="hide-mobile">2024-11-05</td>
+            <td class="hide-mobile">Dr. Tolunay Bag</td>
+            <td><span class="status in-progress">InProgress</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="table-footer">
+          <div class="pagination">
+            <button class="page-btn"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+          <div class="rows-per-page">
+            Show:
+            <select id="rowsPerPage">
+              <option value="10">10 rows</option>
+              <option value="20">20 rows</option>
+              <option value="50">50 rows</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div id="infoModal" class="modal">
+    <div class="modal-content">
+      <span class="close"
+        style="color:rgb(59, 59, 59); font-size: 15px; border: 1px solid transparent; border-radius: 50%; padding-right: 5px; padding-left: 5px; padding-top: 2px; padding-bottom: 2px;">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDate"></p>
+      <p id="modalDescription"></p>
+      <div class="modal-speakers">
+        <div class="speaker-avatars"></div>
+        <p id="modalSpeakers"></p>
+        <p id="modalAttendees"></p>
+      </div>
+      <div class="modal-actions">
+        <div class="edit-btn-div">
+          <button class="modal-btn edit-btn">Edit</button>
+        </div>
+        <div class="delete-mark-btn-div">
+          <button class="modal-btn delete-btn">Delete</button>
+          <button class="modal-btn complete-btn">Mark as completed</button>
+          </d </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
